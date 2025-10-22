@@ -121,8 +121,10 @@ This project is licensed under the MIT License - see the [LICENSE](https://chatg
 
 For further inquiries or contributions, please contact:
 
-- **Email**: [shakerajannatema@gmail.com](mailto:your.email@example.com)
-- **GitHub**: [https://github.com/shakeraema](https://github.com/yourusername)
+- **Email**: [shakerajannatema@gmail.com](mailto:shakerajannatema@gmail.com)
+- **Email**: [nivritamunib@gmail.com](mailto:nivritamunib@gmail.com)
+- **GitHub**: [https://github.com/shakeraema](https://github.com/shakeraema)
+- **GitHub**: [https://github.com/nivrita_munib](https://github.com/nivrita_munib)
 
 ---
 
