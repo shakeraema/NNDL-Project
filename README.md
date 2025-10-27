@@ -132,7 +132,7 @@ python evaluate_model.py
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](https://chatgpt.com/c/LICENSE) file for details.
+
 
 ---
 
@@ -146,5 +146,3 @@ For further inquiries or contributions, please contact:
 - **GitHub**: [https://github.com/nivrita_munib](https://github.com/nivrita_munib)
 
 ---
-
-Feel free to modify this README to better fit your project's specifics and personal preferences.
