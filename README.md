@@ -130,19 +130,12 @@ python evaluate_model.py
 
 ---
 
+## 📣 Contributors: 
+- [Shakera Jannat Ema](https://github.com/shakeraema) 
+- [Nivrita Munib](https://github.com/Nivrita44)
+
+  ---
+
 ## 📄 License
+SUST © 2025 [Nivrita-Shakera / SUST]
 
-
-
----
-
-## 📞 Contact
-
-For further inquiries or contributions, please contact:
-
-- **Email**: [shakerajannatema@gmail.com](mailto:shakerajannatema@gmail.com)
-- **Email**: [nivritamunib@gmail.com](mailto:nivritamunib@gmail.com)
-- **GitHub**: [https://github.com/shakeraema](https://github.com/shakeraema)
-- **GitHub**: [https://github.com/nivrita_munib](https://github.com/nivrita_munib)
-
----
