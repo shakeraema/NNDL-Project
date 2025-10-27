@@ -93,6 +93,25 @@ To train the model:
 
 ---
 
+## 🖼️ Detection Result
+
+After uploading the MRI image, the system classifies the image and provides a result along with the confidence score. Here’s an example of a result:
+
+![Detection Result](static/images/Detection_Result.jpg)
+
+**Result**: Glioma Tumor  
+**Confidence**: 95%
+
+---
+
+## 🖼️ Homepage MRI Image
+
+Here’s a preview of the homepage interface displaying the MRI image and the predicted result:
+
+![Homepage MRI Image](static/images/Home_Page_MRI.jpg)
+
+---
+
 ## 📈 Model Evaluation
 
 After training, evaluate the model's performance using metrics such as:
