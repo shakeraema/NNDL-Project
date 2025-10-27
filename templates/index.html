@@ -11,103 +11,144 @@
 <style>
   body {
     font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at top left, #1a1a40, #090a27);
-    color: #fff;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
     min-height: 100vh;
-    overflow-x: hidden;
+    color: #222;
+    background-color: #f6f9fc;
   }
 
-  .hero {
-    text-align: center;
-    padding: 100px 20px 60px;
-    background: url('https://cdn.pixabay.com/photo/2017/08/30/11/06/brain-2692457_1280.jpg') no-repeat center/cover;
+  /* ===== Left Info Section ===== */
+  .info-section {
+    flex: 1;
+    min-width: 350px;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWWDHpKmvPN1GBBRokEGLmq3SLCVUISe1f3l999U_YD0R0lMyhnBZ4ugY-2-9bjF6sJrg&usqp=CAU') no-repeat center/cover;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 60px;
+    overflow: hidden;
   }
 
-  .hero::before {
+  .info-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(10, 10, 30, 0.75);
-    backdrop-filter: blur(3px);
+    background: rgba(20, 30, 60, 0.6);
+    backdrop-filter: blur(4px);
   }
 
-  .hero > * {
+  .info-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    max-width: 520px;
   }
 
-  .hero h1 {
-    font-size: 3.2rem;
+  .info-content h1 {
+    font-size: 2.9rem;
     font-weight: 700;
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
   }
 
-  .hero p {
-    font-size: 1.15rem;
-    color: #dcdcdc;
-    max-width: 700px;
-    margin: 20px auto 0;
+  .info-content p {
+    font-size: 1.05rem;
+    color: #e0e0e0;
+    line-height: 1.7;
+  }
+
+  /* ===== Right Prediction Section ===== */
+  .prediction-section {
+    flex: 1;
+    min-width: 350px;
+    background: linear-gradient(135deg, #ffffff, #e3f2fd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    position: relative;
   }
 
   .glass-card {
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(15px);
     border-radius: 20px;
-    padding: 30px;
-    border: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 40px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 480px;
+    transition: all 0.3s ease;
   }
 
   .glass-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
   }
 
-  .glass-card i {
-    font-size: 2rem;
-    color: #6a11cb;
-    margin-bottom: 15px;
+  .section-title {
+    font-weight: 600;
+    color: #007aff;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  input[type="file"] {
+    background-color: #f9fbff;
+    color: #333;
+    border: 1px solid #cfd8dc;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  input[type="file"]::file-selector-button {
+    background-color: #4facfe;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+
+  input[type="file"]::file-selector-button:hover {
+    background-color: #00c9ff;
   }
 
   .btn-primary {
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
     border: none;
     width: 100%;
     border-radius: 10px;
     font-weight: 600;
+    padding: 12px;
+    color: #fff;
+    font-size: 1rem;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(37,117,252,0.4);
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
     transition: 0.3s;
   }
 
   .btn-primary:hover {
     transform: scale(1.03);
-    box-shadow: 0 6px 20px rgba(37,117,252,0.6);
-  }
-
-  .result-card img {
-    max-height: 380px;
-    object-fit: contain;
-    margin-top: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+    box-shadow: 0 6px 25px rgba(0, 188, 212, 0.4);
   }
 
   .confidence-bar {
-    height: 20px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.15);
+    height: 18px;
+    border-radius: 9px;
+    background: #e6e6e6;
     overflow: hidden;
     margin: 20px 0;
   }
 
   .confidence-bar-fill {
     height: 100%;
-    border-radius: 10px;
+    border-radius: 9px;
     background: linear-gradient(90deg, #00c853, #b2ff59);
     width: 0%;
     transition: width 1s ease-in-out;
@@ -115,119 +156,93 @@
 
   footer {
     text-align: center;
-    margin-top: 60px;
-    color: #aaa;
-    font-size: 0.9rem;
-    padding-bottom: 20px;
+    margin-top: 40px;
+    color: #777;
+    font-size: 0.85rem;
   }
 
-  .section-title {
-    font-weight: 600;
-    color: #b3c7ff;
-    margin-bottom: 25px;
-  }
-
-  input[type="file"] {
-    background-color: rgba(255,255,255,0.1);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 10px;
-  }
-
-  input[type="file"]::file-selector-button {
-    background-color: #6a11cb;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+  img {
+    max-height: 350px;
     border-radius: 10px;
-    transition: 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   }
 
-  input[type="file"]::file-selector-button:hover {
-    background-color: #2575fc;
+  /* ===== Responsive Design ===== */
+  @media (max-width: 992px) {
+    body {
+      flex-direction: column;
+    }
+    .info-section, .prediction-section {
+      flex: none;
+      width: 100%;
+      min-height: 50vh;
+      padding: 40px 25px;
+    }
+    .info-content h1 {
+      font-size: 2.2rem;
+      text-align: center;
+    }
+    .info-content p {
+      text-align: center;
+    }
   }
 </style>
 </head>
 
 <body>
 
-<div class="container-fluid p-0">
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>MRI Tumor Detection AI</h1>
-    <p>Detect and classify brain tumors using deep learning — trained on thousands of MRI scans for <strong>accurate, reliable</strong> results.</p>
+  <!-- Left Side Info -->
+  <section class="info-section">
+    <div class="info-content">
+      <h1>MRI Tumor Detection</h1>
+      <p>
+        Brain tumors are abnormal growths of cells that disrupt normal brain function.
+        MRI scans enable early and accurate diagnosis by visualizing detailed structures.
+        Using advanced deep learning, this system helps identify
+        <strong>Glioma</strong>, <strong>Meningioma</strong>, and <strong>Pituitary</strong> tumors —
+        empowering doctors with precise insights for better treatment.
+      </p>
+    </div>
   </section>
 
-  <div class="container py-5">
+  <!-- Right Side Prediction -->
+  <section class="prediction-section">
+    <div class="glass-card text-center">
 
-    <!-- Info Cards -->
-    <div class="row text-center mb-5">
-      <div class="col-md-4 mb-4">
-        <div class="glass-card h-100">
-          <i class="bi bi-cpu"></i>
-          <h5>Deep Learning Model</h5>
-          <p>Trained with thousands of brain MRI images to identify complex patterns beyond human perception.</p>
+      {% if not result %}
+        <h4 class="section-title">Upload MRI Image</h4>
+        <form method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <input type="file" class="form-control" name="file" accept="image/*" required>
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Upload & Detect</button>
+        </form>
+      {% endif %}
+
+      {% if result %}
+        <h4 class="section-title">Detection Result</h4>
+        <h3 class="fw-bold text-uppercase text-info">{{ result }}</h3>
+
+        <div class="confidence-bar">
+          <div class="confidence-bar-fill" style="width: {{ confidence|replace('%','')}}%"></div>
         </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="glass-card h-100">
-          <i class="bi bi-lightning-charge"></i>
-          <h5>Fast & Accurate</h5>
-          <p>Delivers high-speed inference and confidence scores, helping medical experts with instant insights.</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="glass-card h-100">
-          <i class="bi bi-activity"></i>
-          <h5>Multi-Class Detection</h5>
-          <p>Detects <strong>Glioma</strong>, <strong>Meningioma</strong>, <strong>Pituitary</strong> tumors or confirms <strong>No Tumor</strong>.</p>
-        </div>
-      </div>
+
+        <p>Confidence: <strong>{{ confidence }}</strong></p>
+        <img src="{{ url_for('static', filename=file_path) }}" alt="MRI Result" class="img-fluid">
+        <a href="/" class="btn btn-primary mt-4">Try Another Image</a>
+      {% endif %}
+
+      <footer>© 2025 MRI Tumor Detection | Powered by Deep Learning</footer>
     </div>
-
-    <!-- Upload Section -->
-    {% if not result %}
-    <div class="glass-card mx-auto" style="max-width: 500px;">
-      <h4 class="text-center section-title">Upload MRI Image</h4>
-      <form method="POST" enctype="multipart/form-data">
-        <div class="mb-3">
-          <input type="file" class="form-control" name="file" accept="image/*" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Upload & Detect</button>
-      </form>
-    </div>
-    {% endif %}
-
-    <!-- Result -->
-    {% if result %}
-    <div class="glass-card result-card mx-auto text-center" style="max-width: 600px;">
-      <h4 class="section-title">Detection Result</h4>
-      <h3 class="fw-bold text-uppercase text-info">{{ result }}</h3>
-
-      <div class="confidence-bar">
-        <div class="confidence-bar-fill" style="width: {{ confidence|replace('%','')}}%"></div>
-      </div>
-
-      <p>Confidence: <strong>{{ confidence }}</strong></p>
-      <img src="{{ url_for('static', filename=file_path) }}" alt="MRI Result">
-      <a href="/" class="btn btn-primary mt-3">Try Another Image</a>
-    </div>
-    {% endif %}
-
-    <footer>
-      <p>© 2025 MRI Tumor Detection | Deep Learning Powered</p>
-    </footer>
-
-  </div>
-</div>
+  </section>
 
 <script>
   const bar = document.querySelector('.confidence-bar-fill');
-  if(bar) {
+  if (bar) {
     const width = bar.style.width;
     bar.style.width = '0%';
-    setTimeout(() => { bar.style.width = width; }, 200);
+    setTimeout(() => { bar.style.width = width; }, 300);
   }
 </script>
 
